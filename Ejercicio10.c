@@ -11,12 +11,12 @@ void ingresardatos(Bibiloteca *libro, int *n){
         do{
         printf ("Ingrese el ID %d\n:", i + 1);
         scanf ("%d", &libro[i].ID);
-        if (&libro[i].ID<0)
+        if (libro[i].ID<0)
         {
             printf ("Error. intente de nuevo\n");
         }
         
-        }while (&libro[i].ID<0);
+        }while (libro[i].ID<0);
 
         printf ("Ingrese el titulo del libro %d\n:", i + 1);
         scanf ("%s", libro[i].titulo);
