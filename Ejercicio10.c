@@ -8,9 +8,15 @@ void ingresardatos(Bibiloteca *libro, int *n){
 
     for (int i = 0; i < *n; i++)
     {
+        do{
         printf ("Ingrese el ID %d\n:", i + 1);
         scanf ("%d", &libro[i].ID);
-
+        if (&libro[i].ID<0)
+        {
+            printf ("Error. intente de nuevo\n");
+        }
+        
+        }while (&libro[i].ID<0);
 
         printf ("Ingrese el titulo del libro %d\n:", i + 1);
         scanf ("%s", libro[i].titulo);
@@ -19,7 +25,7 @@ void ingresardatos(Bibiloteca *libro, int *n){
         scanf ("%s", libro[i].Autor);
 
         do
-        {
+        { 
             printf ("Ingrese el año de publicacion %d\n:", i + 1);
             scanf ("%d", &libro[i].año);
             if (libro[i].año<0)
@@ -45,7 +51,7 @@ void mostrar(Bibiloteca *libro, int n){
            libro[i].ID,
            libro[i].titulo,
            libro[i].Autor,
-           libro[i].año,
+           libro[i].año, 
            libro[i].estado == 0 ? "Disponbile" : "Ocupado");
     }
 }
